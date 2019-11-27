@@ -25,7 +25,7 @@ public class Main
 
 		System.out.println("====List animals in descending order by year====");	
 		animals.sort((a1, a2) -> a2.getYear() - a1.getYear());
-		animals.forEach((animal) -> System.out.println(animal.getName()));
+		animals.forEach((animal) -> System.out.println(animal.getName() + " named in: " + animal.getYear()));
 
 		System.out.println("====List animals alphabetically====");	
 		animals.sort((a1, a2) -> a1.getName().compareToIgnoreCase(a2.getName()));
@@ -63,6 +63,15 @@ public class Main
 		animals.sort((a1, a2) -> a1.getName().compareToIgnoreCase(a2.getName()));
 		animals.forEach((animal) -> {
 			if (animal.getYear() == 1758)
+			{
+				System.out.println(animal.getName());
+			}
+		});
+
+		//for stretch (list is already sorted alphabetically at this point)
+		System.out.println("====List animals that are mammals alphabetically====");
+		animals.forEach((animal) -> {
+			if (animal instanceof Mammal)     //check if animal is instace of Mammal subclass
 			{
 				System.out.println(animal.getName());
 			}
